@@ -1,0 +1,56 @@
+let a = prompt('Введите текст: ');                                                        //Вводим текст в любом регистре
+	var choose = prompt('В какой регистр инвертировать? 1 - верхний, 2 - нижний');          //Выбираем в какой перевести 
+                                                                                            (все символы, кроме первого)
+	let b = [];         
+		
+ if (choose == 1) {     //условия выбора, решил сделать через if, а не через case
+	to_CAPS();
+ 
+ }
+ if (choose == 2) {
+	to_lower();
+ }
+	
+function to_CAPS() {	  //Перевод в верхний регистр (всех кроме первого символа)
+	for ( i = 0; i < a.length; i++ ) {
+		
+	if (a[i] == a[0]) {
+			b[i] = a[i];
+			document.write(b[i]);
+			i++;
+		} 
+		if ( (a.charCodeAt(i) >= 1072) && (a.charCodeAt(i) <= 1103 ) ) {
+			b[i] = a.charCodeAt(i) - 32; 
+			b[i] = String.fromCharCode(b[i]);
+			
+		}
+		else {
+			b[i] = a[i];
+		}
+		document.write(b[i]);
+	}
+}
+
+function to_lower() {  //Функция перевода в нижний регистр (всех, кроме первого)
+
+ 
+	for ( i = 0; i < a.length; i++) {
+	
+		if (a[i] == a[0]) {
+			b[i] = a[i];
+			document.write(b[i]);
+			i++;
+		}
+		if ( (a.charCodeAt(i) >= 1072) && (a.charCodeAt(i) <= 1103 ) ) {
+			b[i] = a[i];
+			
+		}
+		else {
+			
+			b[i] = a.charCodeAt(i) + 32; 
+			b[i] = String.fromCharCode(b[i]);
+		}
+		document.write(b[i]);
+	}
+
+}
